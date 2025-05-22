@@ -1,0 +1,248 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: rgb(142, 99, 43);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.div-img-logo {
+   display: flex;
+   margin-left: 15%;
+}
+
+.img-logo {
+    width: 50%;
+}
+
+.topicos {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    margin-left: 30%;
+    gap: 20px;
+}
+
+a {
+    color: #c2a47c;
+    text-shadow: 7px 7px 5px black;
+    text-decoration: none;
+    font-family: "Anton", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.div-manhattan-img1 {
+    background-image: url(./img/parallax-imagem1.png);
+    text-align: center;
+    padding: 25%;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.div-manhattan-img1 h1 {
+    color: white;
+    font-size: 50px;
+}
+
+.sobre1 {
+    margin: 0 auto;
+    width: 50%;
+    text-align: justify;
+    margin-bottom: 5%;
+    color: rgb(94, 92, 92);
+    word-spacing: 8px;
+}
+
+.sobre1 h2 {
+    text-align: center;
+    color: rgb(142, 99, 43);
+    margin-bottom: 3%;
+}
+
+.div-manhattan-img2 {
+    background-image: url(./img/parallax-imagem2.jpg);
+    text-align: center;
+    padding: 20%;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.div-manhattan-img2 h3 {
+    color: white;
+    font-size: 30px;
+    background: rgb(142, 99, 43);
+    padding: 10px;
+}
+
+.sobre2 {
+    margin: 0 auto;
+    width: 50%;
+    text-align: justify;
+    color: rgb(94, 92, 92);
+    word-spacing: 8px;
+    margin-bottom: 5%;
+}
+
+.sobre2 h2 {
+    text-align: center;
+    color: rgb(142, 99, 43);
+    margin: 3%;
+}
+
+.div-manhattan-img3 {
+    background-image: url(./img/parallax-imagem3.jpg);
+    text-align: center;
+    padding: 15%;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.div-manhattan-img3 h3 {
+    color: white;
+    font-size: 30px;
+    background: rgb(142, 99, 43);
+    padding: 10px;
+}
+
+.sobre3 {
+    margin: 0 auto;
+    width: 50%;
+    text-align: justify;
+    color: rgb(94, 92, 92);
+    word-spacing: 8px;
+    margin-bottom: 5%;
+}
+
+.sobre3 h2 {
+    text-align: center;
+    color: rgb(142, 99, 43);
+    margin: 3%;
+}
+
+.manhattan-img-4 {
+    background: url(./img/parallax-imagem4.png);
+    height: 850px;
+    padding: 30px;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.manhattan-img-4 h2 {
+    display: flex;
+    padding: 10px;
+    font-weight: 900;
+    background: rgb(142, 99, 43);
+    color: white;
+    width: 30%;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.box-manhattan {
+    display: inline;
+}
+
+iframe {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.paragrafos {
+    background: rgb(142, 99, 43);
+    width: 60%;
+    padding: 20px;
+    font-size: large;
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+    text-shadow: 7px 7px 5px black;
+    font-weight: 900;
+}
+
+.manhattan-img-5 {
+    background: url(./img/cafeteria.jpg);
+    height: 850px;
+    padding: 30px;
+    background-attachment: fixed;
+    background-size: cover;
+    display: grid;
+    justify-content: center;
+    
+}
+
+.manhattan-img-5 h2 {
+    font-family: sans-serif;
+    color: white;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-shadow: 7px 7px 5px white;
+}
+
+.lista-tudo {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.lista {
+    font-family: sans-serif;
+    color: white;
+    margin: 0 auto;
+    width: 100%;
+    margin: 5px;
+    font-family: Fira Code;
+    padding: 10px;
+}
+
+.lista span {
+    display: inline;
+    margin: 10px;
+}   
+
+.lista p {
+    margin: 10px 0px 10px 0px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.fechado {
+    color: #c2a47c;
+    font-size: 20px;
+}
+
+.rodape {
+    margin-top: 100px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    text-align: center;
+    background: rgb(0, 0, 0, 0.6);
+}
+
+.span {
+    color: #c2a47c;
+}
