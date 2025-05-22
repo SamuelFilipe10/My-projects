@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -9,6 +10,7 @@ header {
     display: flex;
     align-items: center;
     padding: 20px;
+    transition: 1s;
 }
 
 .div-img-logo {
@@ -245,4 +247,15 @@ iframe {
 
 .span {
     color: #c2a47c;
+}
+
+.seta {
+    width: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 60px;
+    bottom: 40px;
+    cursor: pointer;
 }
