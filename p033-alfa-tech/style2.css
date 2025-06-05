@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}   
+
+header a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+header h3 {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+}
+
+header img {
+    width: 5%;
+    margin: 1%;
+}
+
+header {
+    padding: 10px;
+    padding-left: 20%;
+    display: flex;
+    align-items: center;
+    background: rgb(33, 151, 248);
+}
+
+.header-titles {
+    margin-right: 25%;
+}
+
+.header-topicos {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.tabela {
+    margin: 0 auto;
+    width: 60%;
+    height: 200px;
+    margin-top: 5%;
+}
+
+.space {
+    border: none; 
+    width: 20%;
+    background: red;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.tabela p {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+th {
+    padding: 20px;
+    margin: 100px;
+    border: 2px solid gray;
+    width: 20%;
+}
