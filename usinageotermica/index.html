@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usina Geotérmica</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="./favicon.png" />
+
+
+<body>
+    <div class="seta">
+        <a href="#header"><img src="./seta.png"/></a>
+    </div>
+
+    <header' id="header">
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Usinas Geotérmicas</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#oque-e">O que é?</a></li>
+                <li><a href="#como-funciona">Como funciona?</a></li>
+                <li><a href="#vantagens">Vantagens</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Energia do Futuro</h1>
+            <p class="hero-subtitle">Descubra como o calor da Terra pode transformar o nosso mundo</p>
+            <button class="cta-button" onclick="document.getElementById('oque-e').scrollIntoView({behavior: 'smooth'})">
+                Saiba Mais
+            </button>
+        </div>
+    </section>
+
+    <main>
+        <section id="oque-e" class="section">
+            <div class="container">
+                <h2 class="section-title">O que são Usinas Geotérmicas?</h2>
+                <div class="content-grid">
+                    <div class="text-content">
+                        <p class="lead-text">
+                            As usinas geotérmicas são instalações que aproveitam o calor natural do interior da Terra
+                            para gerar energia elétrica limpa e renovável.
+                        </p>
+                        <p>
+                            Esta tecnologia utiliza o calor natural do planeta, que está constantemente sendo
+                            regenerado,
+                            tornando-a uma fonte de energia verdadeiramente sustentável.
+                        </p>
+                    </div>
+                    <div class="image-content">
+                        <img src="usina.jpg" alt="Usina Geotérmica" class="responsive-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Como Funciona?</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Perfuração</h3>
+                        <p>Poços são perfurados até alcançar reservatórios de água quente subterrâneos</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Extração</h3>
+                        <p>Vapor ou água quente é trazido à superfície através dos poços</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Geração</h3>
+                        <p>O vapor movimenta turbinas conectadas a geradores de eletricidade</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Reinjeção</h3>
+                        <p>A água resfriada é reinjetada no subsolo para manter a sustentabilidade</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vantagens" class="section">
+            <div class="container">
+                <h2 class="section-title">Vantagens da Energia Geotérmica</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="icon">🌱</div>
+                        <h3>Energia Limpa</h3>
+                        <p>Emissão mínima de gases poluentes e carbono neutro</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="icon">⚡</div>
+                        <h3>Disponibilidade 24/7</h3>
+                        <p>Energia constante, independente de condições climáticas</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="icon">💰</div>
+                        <h3>Custo Eficiente</h3>
+                        <p>Menores custos operacionais a longo prazo</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="icon">🏞️</div>
+                        <h3>Pequena Área</h3>
+                        <p>Menor impacto ambiental comparado a outras fontes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Usinas Geotérmicas. Todos os direitos reservados.</p>
+            <p>Energia sustentável para um futuro melhor</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
