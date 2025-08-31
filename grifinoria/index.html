@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grifinória - A Casa dos Corajosos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c1810;
+            background: linear-gradient(135deg, #8b0000 0%, #ffd700 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(139, 0, 0, 0.95);
+            color: #ffd700;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/gryffindor-banner.png') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            background: url('images/gryffindor-crest.png') center/contain no-repeat;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(44, 24, 16, 0.9);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #8b0000;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            background: rgba(255, 255, 255, 0.95);
+            margin: 2rem auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        section {
+            padding: 3rem 2rem;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #8b0000;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #ffd700;
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: #8b0000;
+            margin: 2rem 0 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            background: linear-gradient(rgba(139,0,0,0.1), rgba(255,215,0,0.1));
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            margin: 2rem auto;
+            background: url('images/gryffindor-common-room.png') center/cover;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Características */
+        .caracteristicas {
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .trait-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 3px solid #ffd700;
+            transition: transform 0.3s ease;
+        }
+
+        .trait-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .trait-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: url('images/gryffindor-crest.png') center/contain no-repeat;
+        }
+
+        .trait-card:nth-child(2) .trait-icon {
+            background: url('images/gryffindor-sword.png') center/contain no-repeat;
+        }
+
+        .trait-card:nth-child(3) .trait-icon {
+            background: url('images/hogwarts-castle.png') center/contain no-repeat;
+        }
+
+        .trait-card:nth-child(4) .trait-icon {
+            background: url('images/gryffindor-tower.png') center/contain no-repeat;
+        }
+
+        /* Membros Famosos */
+        .membros {
+            background: rgba(139, 0, 0, 0.05);
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .member-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: scale(1.02);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .member-card:nth-child(1) .member-image {
+            background-image: url('images/harry-potter.png');
+        }
+
+        .member-card:nth-child(2) .member-image {
+            background-image: url('images/hermione-granger.png');
+        }
+
+        .member-card:nth-child(3) .member-image {
+            background-image: url('images/dumbledore.png');
+        }
+
+        .member-info {
+            padding: 1.5rem;
+        }
+
+        .member-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #8b0000;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        /* História */
+        .historia {
+            background: rgba(255, 215, 0, 0.08);
+        }
+
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #8b0000;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 55%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: 55%;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: #8b0000;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Galeria */
+        .galeria {
+            background: rgba(139, 0, 0, 0.03);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item:nth-child(1) { background-image: url('images/great-hall.png'); }
+        .gallery-item:nth-child(2) { background-image: url('images/quidditch-field.png'); }
+        .gallery-item:nth-child(3) { background-image: url('images/gryffindor-sword.png'); }
+        .gallery-item:nth-child(4) { background-image: url('images/hogwarts-castle.png'); }
+        .gallery-item:nth-child(5) { background-image: url('images/sorting-hat.png'); }
+        .gallery-item:nth-child(6) { background-image: url('images/gryffindor-tower.png'); }
+
+        /* Footer */
+        footer {
+            background: rgba(44, 24, 16, 0.95);
+            color: #ffd700;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-crest {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: url('images/gryffindor-crest.png') center/contain no-repeat;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .timeline::before { display: none; }
+            .timeline-content {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+            
+            section { padding: 2rem 1rem; }
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="content">
+                <div class="logo"></div>
+                <h1>GRIFINÓRIA</h1>
+                <p class="subtitle">"Onde habitam os corajosos de coração"</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#caracteristicas">Características</a></li>
+                <li><a href="#membros">Membros Famosos</a></li>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="inicio" class="hero">
+            <h2>Bem-vindos à Casa Grifinória</h2>
+            <div class="hero-image"></div>
+            <p>A Grifinória é uma das quatro Casas da Escola de Magia e Bruxaria de Hogwarts, fundada por Godric Gryffindor. Os membros desta casa são conhecidos por sua coragem, bravura, ousadia e cavalheirismo. O animal símbolo da Grifinória é o leão, e suas cores são o vermelho e o dourado.</p>
+            <p>A Grifinória valoriza a coragem acima de tudo, e seus membros são frequentemente encontrados na linha de frente das batalhas contra as forças das trevas. É a casa que produziu alguns dos bruxos mais famosos e heróicos da história mágica.</p>
+        </section>
+
+        <section id="caracteristicas" class="caracteristicas">
+            <h2>Características dos Grifinórios</h2>
+            <p>Os estudantes selecionados para a Grifinória possuem qualidades especiais que os distinguem das outras casas. O Chapéu Seletor procura por traços específicos de personalidade ao fazer sua escolha.</p>
+            
+            <div class="traits-grid">
+                <div class="trait-card">
+                    <div class="trait-icon"></div>
+                    <h3>Coragem</h3>
+                    <p>A característica mais marcante dos grifinórios é sua coragem inabalável diante do perigo e da adversidade.</p>
+                </div>
+                <div class="trait-card">
+                    <div class="trait-icon"></div>
+                    <h3>Bravura</h3>
+                    <p>Enfrentam seus medos e lutam pelo que é certo, mesmo quando as chances estão contra eles.</p>
+                </div>
+                <div class="trait-card">
+                    <div class="trait-icon"></div>
+                    <h3>Cavalheirismo</h3>
+                    <p>Demonstram honra, cortesia e proteção aos mais fracos, seguindo um código moral elevado.</p>
+                </div>
+                <div class="trait-card">
+                    <div class="trait-icon"></div>
+                    <h3>Determinação</h3>
+                    <p>Possuem uma força de vontade férrea e nunca desistem de seus objetivos e ideais.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="membros" class="membros">
+            <h2>Membros Famosos da Grifinória</h2>
+            <p>Ao longo dos séculos, a Grifinória produziu alguns dos bruxos mais notáveis e heroicos do mundo mágico. Aqui estão alguns dos membros mais ilustres desta nobre casa.</p>
+            
+            <div class="members-grid">
+                <div class="member-card">
+                    <div class="member-image"></div>
+                    <div class="member-info">
+                        <div class="member-name">Harry Potter</div>
+                        <div class="member-role">O Menino que Sobreviveu</div>
+                        <p>O mais famoso grifinório dos tempos modernos, conhecido por derrotar Lord Voldemort e salvar o mundo bruxo das trevas.</p>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <div class="member-image"></div>
+                    <div class="member-info">
+                        <div class="member-name">Hermione Granger</div>
+                        <div class="member-role">A Bruxa Mais Brilhante de sua Geração</div>
+                        <p>Conhecida por sua inteligência excepcional e lealdade inabalável aos amigos, foi fundamental na derrota de Voldemort.</p>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <div class="member-image"></div>
+                    <div class="member-info">
+                        <div class="member-name">Albus Dumbledore</div>
+                        <div class="member-role">Diretor de Hogwarts</div>
+                        <p>Considerado o maior bruxo de todos os tempos, foi diretor de Hogwarts e líder da Ordem da Fênix.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="historia" class="historia">
+            <h2>História da Grifinória</h2>
+            <p>A rica história da Casa Grifinória remonta aos primórdios de Hogwarts, há mais de mil anos. Conheça os momentos mais importantes desta casa lendária.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Século X</div>
+                        <h3>Fundação de Hogwarts</h3>
+                        <p>Godric Gryffindor, junto com os outros três fundadores, estabelece a Escola de Magia e Bruxaria de Hogwarts e cria a Casa Grifinória.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Século XI</div>
+                        <h3>A Espada de Gryffindor</h3>
+                        <p>Godric Gryffindor forja sua famosa espada, que mais tarde se tornaria uma relíquia importante na luta contra as forças das trevas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">1991-1998</div>
+                        <h3>A Era Harry Potter</h3>
+                        <p>Harry Potter e seus amigos estudam em Hogwarts, culminando na Segunda Guerra Bruxa e a derrota definitiva de Lord Voldemort.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Presente</div>
+                        <h3>Legado Contínuo</h3>
+                        <p>A Grifinória continua a formar jovens bruxos corajosos, mantendo viva a tradição de coragem e heroísmo de Godric Gryffindor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="galeria">
+            <h2>Galeria da Grifinória</h2>
+            <p>Explore os locais e objetos mais emblemáticos relacionados à Casa Grifinória através desta galeria visual.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-crest"></div>
+            <p>&copy; 2024 Casa Grifinória - Hogwarts School of Witchcraft and Wizardry</p>
+            <p><em>"Draco dormiens nunquam titillandus"</em></p>
+        </div>
+    </footer>
+</body>
+</html>
