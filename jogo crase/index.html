@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo das Portas - Aprenda Crase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jogo da Crase</h1>
+            <div class="score-board">
+                <span>Pontos: <span id="score">0</span></span>
+                <span>Nível: <span id="level">1</span></span>
+            </div>
+        </header>
+
+        <div class="game-area">
+            <div class="phrase-container">
+                <h2 id="current-phrase">Carregando frase...</h2>
+                <p class="instruction">Escolha a porta correta: COM crase ou SEM crase?</p>
+            </div>
+
+            <canvas id="gameCanvas" width="800" height="400"></canvas>
+
+            <div class="door-buttons">
+                <button id="door-with-crase" class="door-btn">
+                    COM Crase (à)
+                </button>
+                <button id="door-without-crase" class="door-btn">
+                    SEM Crase (a)
+                </button>
+            </div>
+        </div>
+
+        <div id="explanation-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3 id="result-title">Resultado</h3>
+                <p id="explanation-text">Explicação aqui...</p>
+                <button id="next-round" class="next-btn">Próxima Rodada</button>
+            </div>
+        </div>
+        
+        <div class="gruoup">
+            <h3>Grupo: Arthur Guerra, Gabriel Coura, Gabriel Leite, Luiz Gabriel, Richardy e Samuel.</h3>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
