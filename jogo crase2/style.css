@@ -1,0 +1,278 @@
+/* Importando fonte do estilo Mario */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Mudando para cores do Mario - céu azul com nuvens */
+  font-family: "Press Start 2P", monospace;
+  background: linear-gradient(180deg, #5c94fc 0%, #87ceeb 100%);
+  min-height: 100vh;
+  color: #333;
+  position: relative;
+}
+
+/* Adicionando nuvens de fundo estilo Mario */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(ellipse 60px 40px at 100px 50px, white 40%, transparent 50%),
+    radial-gradient(ellipse 80px 50px at 300px 120px, white 40%, transparent 50%),
+    radial-gradient(ellipse 70px 45px at 500px 80px, white 40%, transparent 50%),
+    radial-gradient(ellipse 90px 55px at 700px 150px, white 40%, transparent 50%);
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  /* Cores do Mario - vermelho com bordas amarelas */
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 4px solid #ffd700;
+}
+
+header h1 {
+  /* Cor branca para contraste com fundo vermelho */
+  color: white;
+  font-size: 2em;
+  margin-bottom: 15px;
+  text-shadow: 3px 3px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000;
+  font-family: "Press Start 2P", monospace;
+}
+
+.score-board {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.game-area {
+  /* Fundo verde estilo Mario com bordas */
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+  border: 4px solid #f39c12;
+}
+
+.phrase-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#current-phrase {
+  font-size: 1.2em;
+  color: white;
+  margin-bottom: 15px;
+  padding: 20px;
+  /* Fundo azul estilo Mario */
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  border-radius: 10px;
+  border: 3px solid #ffd700;
+  font-weight: bold;
+  text-shadow: 2px 2px 0px #000;
+  font-family: "Press Start 2P", monospace;
+}
+
+.instruction {
+  font-size: 1em;
+  color: white;
+  font-style: normal;
+  text-shadow: 2px 2px 0px #000;
+  font-family: "Press Start 2P", monospace;
+}
+
+#gameCanvas {
+  display: block;
+  margin: 20px auto;
+  /* Borda estilo Mario - marrom como os tijolos */
+  border: 4px solid #8b4513;
+  border-radius: 15px;
+  background: #87ceeb;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.door-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.door-btn {
+  padding: 15px 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  font-family: "Press Start 2P", monospace;
+  border: 3px solid #000;
+}
+
+#door-with-crase {
+  /* Verde estilo Mario */
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  text-shadow: 2px 2px 0px #000;
+}
+
+#door-without-crase {
+  /* Vermelho estilo Mario */
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.door-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.door-btn:active {
+  transform: translateY(-1px);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  /* Fundo amarelo estilo Mario */
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 4px solid #000;
+}
+
+#result-title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 3px 3px 0px #000;
+  font-family: "Press Start 2P", monospace;
+}
+
+#explanation-text {
+  font-size: 0.9em;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #000;
+  font-family: "Press Start 2P", monospace;
+}
+
+.next-btn {
+  padding: 12px 30px;
+  font-size: 1em;
+  /* Azul estilo Mario */
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: 3px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-family: "Press Start 2P", monospace;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.rules {
+  /* Fundo branco com borda preta estilo Mario */
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  border: 3px solid #000;
+}
+
+.rules h3 {
+  color: #e74c3c;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  font-family: "Press Start 2P", monospace;
+  text-shadow: 1px 1px 0px #000;
+}
+
+.rules ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.rules li {
+  padding: 8px 0;
+  color: #000;
+  font-size: 0.8em;
+  font-family: "Press Start 2P", monospace;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  #gameCanvas {
+    width: 100%;
+    height: 300px;
+  }
+
+  .door-buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .score-board {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo das Portas - Escape da Sala da Crase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Mudou título para tema de escape room -->
+            <h1>Escape da Sala da Crase</h1>
+            <div class="score-board">
+                <span>Pontos: <span id="score">0</span></span>
+                <!-- Adicionado contador de vidas -->
+                <span>Vidas: <span id="lives">5</span></span>
+                <!-- Adicionado progresso das portas -->
+                <span>Progresso: <span id="progress">1/10</span></span>
+            </div>
+        </header>
+
+        <div class="game-area">
+            <div class="phrase-container">
+                <!-- Atualizada instrução para tema de escape -->
+                <h2 id="current-phrase">Carregando frase...</h2>
+                <p class="instruction">Escolha a porta correta para escapar da sala!</p>
+            </div>
+
+            <canvas id="gameCanvas" width="800" height="400"></canvas>
+
+            <div class="door-buttons">
+                <button id="door-with-crase" class="door-btn">
+                    COM Crase (à)
+                </button>
+                <button id="door-without-crase" class="door-btn">
+                    SEM Crase (a)
+                </button>
+            </div>
+        </div>
+
+        <div id="explanation-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3 id="result-title">Resultado</h3>
+                <p id="explanation-text">Explicação aqui...</p>
+                <button id="next-round" class="next-btn">Próxima Rodada</button>
+            </div>
+        </div>
+
+        <div class="rules">
+            <!-- Atualizadas regras para novo sistema -->
+            <h3>Como Escapar:</h3>
+            <ul>
+                <li>Você tem 5 vidas para escapar da sala</li>
+                <li>Precisa passar por 10 portas consecutivas</li>
+                <li>Cada acerto dá 10 pontos</li>
+                <li>Cada erro remove 1 vida</li>
+                <li>Se as vidas acabarem, você fica preso!</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
